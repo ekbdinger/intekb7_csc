@@ -22,7 +22,7 @@ function csc_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'csc_admin_content';
+  $handler->display->display_options['title'] = 'All CSC Content';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'role';
   $handler->display->display_options['access']['role'] = array(
@@ -33,7 +33,7 @@ function csc_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '50';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '100';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
@@ -51,6 +51,10 @@ function csc_views_default_views() {
       'empty_column' => 0,
     ),
   );
+  /* Relationship: Content: Author */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'node';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
   /* Field: Global: View result counter */
   $handler->display->display_options['fields']['counter']['id'] = 'counter';
   $handler->display->display_options['fields']['counter']['table'] = 'views';
@@ -67,16 +71,41 @@ function csc_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Content: Edit link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = 'Edit';
+  $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
   /* Field: Content: Post date */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
   $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['exclude'] = TRUE;
   $handler->display->display_options['fields']['created']['date_format'] = 'short';
   /* Field: Content: Updated date */
   $handler->display->display_options['fields']['changed']['id'] = 'changed';
   $handler->display->display_options['fields']['changed']['table'] = 'node';
   $handler->display->display_options['fields']['changed']['field'] = 'changed';
   $handler->display->display_options['fields']['changed']['date_format'] = 'short';
+  /* Field: Content: Author uid */
+  $handler->display->display_options['fields']['uid']['id'] = 'uid';
+  $handler->display->display_options['fields']['uid']['table'] = 'node';
+  $handler->display->display_options['fields']['uid']['field'] = 'uid';
+  $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['name']['label'] = 'Author';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = 'Node ID';
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -100,6 +129,11 @@ function csc_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['path'] = 'csc-admin-content';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'All CSC Content';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'menu-csc-admin';
+  $handler->display->display_options['menu']['context'] = 0;
   $export['csc_admin_content'] = $view;
 
   return $export;
