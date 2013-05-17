@@ -56,25 +56,7 @@ function csc_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 0,
-  );
-  // Exported menu link: menu-csc:<front>
-  $menu_links['menu-csc:<front>'] = array(
-    'menu_name' => 'menu-csc',
-    'link_path' => '<front>',
-    'router_path' => '',
-    'link_title' => 'Service Alerts',
-    'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 1,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -46,
+    'weight' => -49,
   );
   // Exported menu link: menu-csc:node/9673
   $menu_links['menu-csc:node/9673'] = array(
@@ -128,7 +110,7 @@ function csc_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -47,
+    'weight' => -48,
   );
   // Exported menu link: navigation:node/add/csc
   $menu_links['navigation:node/add/csc'] = array(
@@ -158,7 +140,6 @@ function csc_menu_default_menu_links() {
   t('Create CSC Page');
   t('Evening Support');
   t('News');
-  t('Service Alerts');
 
 
   return $menu_links;

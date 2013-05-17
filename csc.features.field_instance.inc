@@ -42,6 +42,7 @@ function csc_field_default_field_instances() {
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
+          'test_format' => 0,
           1 => 1,
           2 => 2,
           3 => 0,
@@ -51,17 +52,20 @@ function csc_field_default_field_instances() {
         'default_order_toggle' => 1,
         'default_order_wrapper' => array(
           'formats' => array(
+            'test_format' => array(
+              'weight' => -49,
+            ),
             1 => array(
-              'weight' => -1,
+              'weight' => -48,
             ),
             2 => array(
-              'weight' => 0,
+              'weight' => -50,
             ),
             3 => array(
-              'weight' => 0,
+              'weight' => -47,
             ),
             4 => array(
-              'weight' => 1,
+              'weight' => -46,
             ),
           ),
         ),

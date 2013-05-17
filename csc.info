@@ -20,7 +20,6 @@ features[menu_custom][] = menu-csc-admin
 features[menu_links][] = management:admin/structure/menu/manage/menu-csc
 features[menu_links][] = management:admin/structure/menu/manage/menu-csc-admin
 features[menu_links][] = menu-csc-admin:node/add/csc
-features[menu_links][] = menu-csc:<front>
 features[menu_links][] = menu-csc:node/9673
 features[menu_links][] = menu-csc:node/9674
 features[menu_links][] = menu-csc:node/9675
