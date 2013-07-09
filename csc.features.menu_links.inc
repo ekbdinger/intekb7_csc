@@ -81,7 +81,7 @@ function csc_menu_default_menu_links() {
     'menu_name' => 'menu-csc',
     'link_path' => 'node/9674',
     'router_path' => 'node/%',
-    'link_title' => 'News',
+    'link_title' => 'Coco Café',
     'options' => array(
       'attributes' => array(
         'title' => '',
@@ -92,7 +92,7 @@ function csc_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -49,
+    'weight' => -40,
   );
   // Exported menu link: menu-csc:node/9675
   $menu_links['menu-csc:node/9675'] = array(
@@ -110,7 +110,7 @@ function csc_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -48,
+    'weight' => -49,
   );
   // Exported menu link: navigation:node/add/csc
   $menu_links['navigation:node/add/csc'] = array(
@@ -137,9 +137,9 @@ function csc_menu_default_menu_links() {
   t('CSC Content');
   t('CSC Department');
   t('CSC Home');
+  t('Coco Café');
   t('Create CSC Page');
   t('Evening Support');
-  t('News');
 
 
   return $menu_links;
